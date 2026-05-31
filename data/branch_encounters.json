@@ -1,0 +1,231 @@
+{
+  "photo_dir": "img/photo",
+  "photo_naming": "0001.webp / 0001.png / 0001.gif（四位数编号，与 image_num 一致）",
+  "image_catalog": {
+    "combat_ambush": 1,
+    "combat_swarm": 2,
+    "combat_wraith": 3,
+    "treasure_chest": 4,
+    "treasure_altar": 5,
+    "treasure_vault": 6,
+    "trap_spike": 7,
+    "trap_rune": 8,
+    "trap_pit": 9,
+    "obstacle_fallen": 10,
+    "obstacle_vines": 11,
+    "obstacle_crystal": 12,
+    "trial_stone": 13,
+    "trial_mirror": 14,
+    "event_fountain": 15,
+    "event_statue": 16,
+    "event_whisper": 17,
+    "mixed_guarded": 18,
+    "mixed_trapped": 19
+  },
+  "item_categories": {
+    "all_traps": ["master_trap_key"],
+    "obstacle_tools": ["wood_axe", "iron_axe", "axe"]
+  },
+  "overpower": {
+    "ratio_min": 1,
+    "ratio_ignore_mismatch": 3,
+    "ratio_crush_mismatch": 10
+  },
+  "kinds": {
+    "combat": {
+      "label": "战斗房",
+      "variants": [
+        {
+          "id": "combat_ambush",
+          "title": "伏兵暗角",
+          "story": "转角处传来金属摩擦声，几只魔物从阴影里探出头来，显然已等候多时。",
+          "image_num": 1,
+          "tags": ["combat", "physical"],
+          "brute_level_base": 6
+        },
+        {
+          "id": "combat_swarm",
+          "title": "虫群涌来",
+          "story": "地面裂开细缝，成群的甲虫涌出，它们的外壳在微光下泛着油绿。",
+          "image_num": 2,
+          "tags": ["combat", "physical"],
+          "brute_level_base": 7
+        },
+        {
+          "id": "combat_wraith",
+          "title": "幽影扑袭",
+          "story": "一团半透明的影子贴墙滑行，忽然朝你胸口扑来，寒意刺骨。",
+          "image_num": 3,
+          "tags": ["combat", "magic_only"],
+          "brute_level_base": 8
+        }
+      ]
+    },
+    "treasure": {
+      "label": "宝箱房",
+      "variants": [
+        {
+          "id": "treasure_chest",
+          "title": "古旧宝箱",
+          "story": "房间中央摆着一只锈迹斑斑的箱子，锁孔里仍有余温，仿佛刚有人离开。",
+          "image_num": 4,
+          "tags": ["treasure", "neutral"],
+          "brute_level_base": 4
+        },
+        {
+          "id": "treasure_altar",
+          "title": "供品石台",
+          "story": "石台上堆着褪色的贡品，最上层是一枚仍在微微发光的金币。",
+          "image_num": 5,
+          "tags": ["treasure", "neutral"],
+          "brute_level_base": 4
+        },
+        {
+          "id": "treasure_vault",
+          "title": "半掩金库",
+          "story": "墙壁后露出半截金库门，门缝间溢出草药与金属混杂的气味。",
+          "image_num": 6,
+          "tags": ["treasure", "neutral"],
+          "brute_level_base": 5
+        }
+      ]
+    },
+    "trap": {
+      "label": "陷阱房",
+      "variants": [
+        {
+          "id": "trap_spike",
+          "title": "翻起刺板",
+          "story": "地面纹路不对——你刚踩上去，一块刺板猛然弹起，尖刺离靴底仅寸许。",
+          "image_num": 7,
+          "tags": ["trap", "physical"],
+          "solve_categories": ["all_traps"],
+          "brute_level_base": 7
+        },
+        {
+          "id": "trap_rune",
+          "title": "符文绊索",
+          "story": "空气中浮动着未消散的咒文，一根几乎看不见的绊索横在必经之路上。",
+          "image_num": 8,
+          "tags": ["trap", "magic_only"],
+          "solve_categories": ["all_traps"],
+          "brute_level_base": 8
+        },
+        {
+          "id": "trap_pit",
+          "title": "落穴伪装",
+          "story": "脚下的石板比周围略新，边缘有细微的灰尘断层——典型的落穴伪装。",
+          "image_num": 9,
+          "tags": ["trap", "physical"],
+          "solve_categories": ["all_traps"],
+          "brute_level_base": 6
+        }
+      ]
+    },
+    "obstacle": {
+      "label": "障碍房",
+      "variants": [
+        {
+          "id": "obstacle_fallen",
+          "title": "坍塌石堆",
+          "story": "通道被整段塌下的石梁堵住，缝隙里仍不断落下碎石。",
+          "image_num": 10,
+          "tags": ["obstacle", "physical"],
+          "solve_items": ["wood_axe", "iron_axe", "axe"],
+          "solve_categories": ["obstacle_tools"],
+          "brute_level_base": 6
+        },
+        {
+          "id": "obstacle_vines",
+          "title": "魔化藤蔓",
+          "story": "粗壮的藤蔓从墙缝钻出，彼此缠绕成网，叶片边缘如刀。",
+          "image_num": 11,
+          "tags": ["obstacle", "physical"],
+          "solve_items": ["wood_axe", "iron_axe", "axe"],
+          "brute_level_base": 7
+        },
+        {
+          "id": "obstacle_crystal",
+          "title": "晶簇屏障",
+          "story": "一簇生长过快的魔法水晶封住了去路，内部有脉动般的光在流动。",
+          "image_num": 12,
+          "tags": ["obstacle", "magic_only"],
+          "solve_items": [],
+          "brute_level_base": 9
+        }
+      ]
+    },
+    "trial": {
+      "label": "试炼房",
+      "variants": [
+        {
+          "id": "trial_stone",
+          "title": "试炼石碑",
+          "story": "石碑上刻着古老的试炼铭文，只有以正确的体魄或意志回应，门才会开启。",
+          "image_num": 13,
+          "tags": ["trial", "neutral"],
+          "brute_level_base": 8
+        },
+        {
+          "id": "trial_mirror",
+          "title": "映像之镜",
+          "story": "一面蒙尘的镜子映出你的倒影，但倒影的动作比你慢半拍，仿佛在考验你的专注。",
+          "image_num": 14,
+          "tags": ["trial", "magic_only"],
+          "brute_level_base": 9
+        }
+      ]
+    },
+    "event": {
+      "label": "奇遇房",
+      "variants": [
+        {
+          "id": "event_fountain",
+          "title": "幽泉低语",
+          "story": "墙角涌出一眼细小泉眼，水声像在低声提问——饮下，或离开？",
+          "image_num": 15,
+          "tags": ["event", "neutral"],
+          "brute_level_base": 5
+        },
+        {
+          "id": "event_statue",
+          "title": "无名石像",
+          "story": "一尊缺了左臂的石像挡在路中，掌心里托着一枚尚未取走的铜币。",
+          "image_num": 16,
+          "tags": ["event", "neutral"],
+          "brute_level_base": 6
+        },
+        {
+          "id": "event_whisper",
+          "title": "墙中低语",
+          "story": "石墙里传来断断续续的耳语，内容时而是咒语，时而是求救。",
+          "image_num": 17,
+          "tags": ["event", "magic_only"],
+          "brute_level_base": 7
+        }
+      ]
+    },
+    "mixed": {
+      "label": "混合房",
+      "variants": [
+        {
+          "id": "mixed_guarded",
+          "title": "守财魔物",
+          "story": "一只魔物盘踞在小型宝库前，它既想扑向你，又舍不得离开身后的箱笼。",
+          "image_num": 18,
+          "tags": ["combat", "treasure", "physical"],
+          "brute_level_base": 7
+        },
+        {
+          "id": "mixed_trapped",
+          "title": "宝箱陷阱",
+          "story": "宝箱与机关连成一体——打开它或许有收获，也可能触发连环陷阱。",
+          "image_num": 19,
+          "tags": ["trap", "treasure", "magic_only"],
+          "solve_categories": ["all_traps"],
+          "brute_level_base": 8
+        }
+      ]
+    }
+  }
+}

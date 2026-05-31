@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>地下城 · 冒险者地牢</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="rpg-view-dungeon">
+  <script>
+    window.RPG_RETURN_TOWN = 'town.html';
+    window.RPG_LOGIN_URL = 'login.html';
+  </script>
+  <div id="app-wrap">
+    <div id="game-root">
+      <div id="hud">加载中…</div>
+      <div id="dungeon-sheet" class="dungeon-sheet" hidden></div>
+      <div id="local-combat-log" class="local-combat-log" aria-live="polite" title="仅保存在本机浏览器"></div>
+      <div id="toast"></div>
+      <div id="flash" class="flash"></div>
+
+
+      
+    </div>
+    <div id="dungeon-combat-bar" class="dungeon-combat-bar" hidden>
+      <button type="button" id="btn-dbar-toggle" class="dungeon-bar-toggle" aria-expanded="true">收起战斗条</button>
+      <div id="dungeon-combat-bar-inner" class="dungeon-combat-bar-inner">
+        <button type="button" id="btn-ap-pause" class="dungeon-bar-btn">停止移动</button>
+        <button type="button" id="btn-ap-resume" class="dungeon-bar-btn" hidden>自动移动</button>
+        <button type="button" id="btn-auto-mode" class="dungeon-bar-btn">自动战斗:开</button>
+        <div id="dungeon-action-slots" class="dungeon-action-slots" aria-label="预设动作顺序"></div>
+        <button type="button" id="btn-campfire" class="dungeon-bar-btn dungeon-bar-btn-dim" disabled>篝火</button>
+        <button type="button" id="btn-sanctuary" class="dungeon-bar-btn dungeon-bar-btn-dim" disabled>避难所</button>
+        <div id="dungeon-action-buttons" class="dungeon-action-buttons"></div>
+        <button type="button" id="btn-turn-execute" class="dungeon-bar-btn">执行下一回合</button>
+        <button type="button" id="btn-action-clear" class="dungeon-bar-btn">清队列</button>
+        <button type="button" id="btn-action-save" class="dungeon-bar-btn">设为自动预设</button>
+        <button type="button" id="btn-bgm-mute" class="dungeon-bar-btn">静音</button>
+        <button type="button" id="btn-dungeon-save" class="dungeon-bar-btn">存档</button>
+        <button type="button" id="btn-town" class="dungeon-bar-btn dungeon-bar-btn-return">回城并存档</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgm" loop preload="auto"></audio>
+
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/common/battle-deck.js"></script>
+  <script src="js/common/skill-vfx.js"></script>
+  <script src="js/town/town-ui.js"></script>
+  <script src="js/dungeon/dungeon-game.js"></script>
+  <script src="js/dungeon/dungeon-page.js"></script>
+  <script>
+    document.body.addEventListener('click', function once() {
+      var a = document.getElementById('bgm');
+      if (a && a.paused) a.play().catch(function () {});
+    }, { once: true });
+  </script>
+</body>
+</html>

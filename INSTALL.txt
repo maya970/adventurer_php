@@ -1,0 +1,16 @@
+Christmas RPG — InfinityFree (https://www.infinityfree.com/)
+
+1) 创建 MySQL 库与用户，在 phpMyAdmin 执行 sql/install.sql（含 kill_log.kill_metrics、players.dungeon_black_room）。
+   若从更早版本升级，请执行 sql/upgrade_kill_metrics_black_room.sql（击杀扩展 JSON + 小黑屋列）。
+   另有历史脚本：upgrade_item_desc.sql 等按需执行。
+2) 复制 config.example.php 为 config.php，填写 db，并设置 admin.password（用于 admin_kills.php）。
+3) 上传整个站点目录，保持 api.php、index.html、admin_kills.php、php/、js/、css/、data/ 相对路径不变。
+4) 浏览器打开首页：先注册/登录；挂机地城为无限层，仅击杀/开箱/死亡会打 API。
+
+击杀审计：admin_kills.php（管理密码同上）查看 kill_log，含击杀时装备分/怪属性 JSON（kill_metrics）与 player_snapshot。
+独立校验页：verify_stats.php（与 admin_kills 相同管理密码）；登录后由本页 ?data=1 拉取摘要，换层/换玩家与图表均在浏览器内计算。
+小黑屋：players.dungeon_black_room 非空时该角色无法登录且无法调用游戏 API；置 NULL 恢复。仅建议在库中手动 UPDATE。
+
+性能：前端约 520ms 一拍；后端仅在 mint/death 等动作写库，适合弱主机。
+
+若曾用旧版仅 session 的库：备份后删表重装 sql/install.sql，或自行把 accounts/kill_log 迁过去（无一键脚本）。

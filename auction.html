@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>拍卖行 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <div class="standalone-page">
+    <nav class="town-nav" aria-label="页面导航"></nav>
+    <header class="standalone-header">
+      <h1>拍卖行</h1>
+      <p class="standalone-sub">下方为当前角色金币与背包；点击背包或拍卖列表中的物品可查看介绍。</p>
+    </header>
+
+    <div class="panel auction-player-panel">
+      <h2>我的角色与背包</h2>
+      <div id="town-stats" class="town-stats-body"></div>
+      <h3 class="subh">背包（点击一行看介绍）</h3>
+      <div id="bag-list" class="bag-list"></div>
+    </div>
+
+    <div class="panel auction-trade-panel">
+      <h2>我的上架 <span id="auc-my-count" class="auc-inline-note"></span></h2>
+      <p class="panel-intro">以下为当前角色在本城拍卖行上架的全部物品（不受他人列表分页限制）。</p>
+      <div class="auc-my-toolbar">
+        <button type="button" id="auc-cancel-all-btn" class="auth-btn" disabled>全部下架</button>
+      </div>
+      <div id="auc-my-list" class="auc-list auc-list--mine"></div>
+
+      <h2 class="auc-browse-title">浏览在售</h2>
+      <p class="panel-intro">先选择分类、填写关键词（均可留空），再点「搜索」。列表不含本人上架（见上方）。</p>
+      <div class="auc-toolbar">
+        <button type="button" id="btn-auction-refresh">刷新</button>
+        <label class="auc-filter-label">分类
+          <select id="auc-filter-slot" class="auc-filter-select">
+            <option value="">全部</option>
+            <option value="weapon">武器</option>
+            <option value="armor">护甲</option>
+            <option value="ring">戒指</option>
+            <option value="boots">鞋</option>
+            <option value="misc">杂物</option>
+          </select>
+        </label>
+        <label class="auc-filter-label">关键词
+          <input type="search" id="auc-filter-q" class="auc-filter-q" placeholder="名称或物品 id（可选）" autocomplete="off">
+        </label>
+        <button type="button" id="btn-auction-search" class="auth-btn">搜索</button>
+      </div>
+      <div id="auc-list" class="auc-list"></div>
+      <div id="auc-pagination" class="auc-pagination">
+        <button type="button" id="auc-page-prev" disabled>上一页</button>
+        <span id="auc-page-info" class="auc-page-info"></span>
+        <button type="button" id="auc-page-next" disabled>下一页</button>
+      </div>
+      <h3 class="subh">上架物品</h3>
+      <p class="panel-intro">挂单价不得低于<strong>商店收购价</strong>（选中物品后输入框会显示最低限价）。成交时平台收取 <strong>5%</strong> 手续费，从成交价中扣除后再付给卖家。</p>
+      <select id="auc-post-item"></select>
+      <input id="auc-post-price" type="number" min="1" placeholder="价格（金币）" class="auc-price-input">
+      <button type="button" id="auc-post-btn" disabled>上架</button>
+    </div>
+
+    <div id="item-detail-pane" class="item-detail-pane panel auction-detail-pane"></div>
+  </div>
+
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/town/town-ui.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/auction-page.js"></script>
+</body>
+</html>

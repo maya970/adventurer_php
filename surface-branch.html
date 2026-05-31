@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分支地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town rpg-view-branch">
+  <script>window.RPG_LOGIN_URL='login.html';</script>
+  <div id="toast"></div>
+  <nav class="town-nav" aria-label="页面导航"></nav>
+  <div id="player-meta-bar" class="player-meta-bar"></div>
+  <div class="sb-page-scroll">
+  <div id="sb-loading-panel" class="panel sb-branch-panel sb-panel-active">
+    <h1>分支地牢</h1>
+    <p class="panel-intro">正在加载冒险数据…</p>
+  </div>
+  <div id="sb-loadout-panel" class="panel sb-branch-panel sb-panel-hidden">
+    <h1>分支地牢 · 准备行囊</h1>
+    <p class="panel-intro">按<strong>物品种类</strong>填写带入数量（从背包<strong>移入</strong>行囊，非复制）。战利品先进行囊；仅在<strong>安全层</strong>（每 50 层或随机安全层）可结束冒险取回背包，其余层只能无功而返。</p>
+    <div id="sb-loadout-list" class="sb-loadout-list"></div>
+    <div class="bag-toolbar">
+      <button id="sb-loadout-start" class="town-dg-btn town-dg-btn-primary" type="button">确认并开始冒险</button>
+      <button id="sb-loadout-empty" class="town-dg-btn" type="button">空行囊出发</button>
+      <a href="town.html" class="town-dg-btn town-dg-btn-secondary">回主城</a>
+    </div>
+  </div>
+  <div id="sb-run-panel" class="panel sb-branch-panel sb-panel-hidden">
+    <h1>分支地牢</h1>
+    <p class="panel-intro">三扇门：<strong>捷径 +3～+20 层</strong>，<strong>普通门 -3～+3 层</strong>（62% 前进 / 38% 倒退）。插图目录：<code>img/photo/0001</code> 起。</p>
+    <p id="sb-info" class="panel-intro">载入中…</p>
+    <p id="sb-safe-hint" class="panel-intro sb-safe-hint"></p>
+    <div id="sb-status" class="panel-intro sb-branch-status"></div>
+
+    <div class="panel sb-bag-panel">
+      <h2 class="sb-section-title">地牢行囊</h2>
+      <p class="panel-intro sb-bag-intro">治疗药水可在此使用；专用道具与<strong>已学技能</strong>在下方遭遇区选择。</p>
+      <div id="sb-bag" class="sb-bag-grid"></div>
+      <div id="sb-skills" class="sb-skills-row"></div>
+    </div>
+
+    <div class="panel sb-event-panel-wrap">
+      <h2 class="sb-section-title">当前遭遇</h2>
+      <div id="sb-event-panel" class="sb-event-panel">
+        <div class="sb-event-visual">
+          <img id="sb-event-img" class="sb-event-img" src="" alt="" />
+        </div>
+        <div id="sb-event-text" class="sb-event-text"></div>
+        <div id="sb-event-actions" class="sb-event-actions"></div>
+      </div>
+    </div>
+
+    <div class="panel sb-scroll-panel">
+      <h2 class="sb-section-title">冒险日志</h2>
+      <div id="sb-log-scroll" class="sb-log-scroll">
+        <div id="sb-log" class="sb-log-list"></div>
+      </div>
+    </div>
+
+    <div class="panel sb-scroll-panel sb-path-panel">
+      <h2 class="sb-section-title">最近历程</h2>
+      <div id="sb-path-scroll" class="sb-path-scroll">
+        <div id="sb-grid" class="sb-path-grid"></div>
+      </div>
+    </div>
+
+    <div class="bag-toolbar">
+      <button id="sb-choose-a" class="town-dg-btn" type="button">门 A</button>
+      <button id="sb-choose-b" class="town-dg-btn" type="button">门 B</button>
+      <button id="sb-choose-c" class="town-dg-btn" type="button">门 C</button>
+      <button id="sb-save" class="town-dg-btn town-dg-btn-secondary" type="button">存档并回城</button>
+      <button id="sb-finish" class="town-dg-btn town-dg-btn-secondary" type="button">结束冒险（安全层取回行囊）</button>
+      <button id="sb-retreat" class="town-dg-btn town-dg-btn-secondary" type="button">无功而返</button>
+      <button id="sb-new-run" class="town-dg-btn town-dg-btn-secondary" type="button">放弃并重选行囊</button>
+      <a href="town.html" class="town-dg-btn town-dg-btn-secondary">回主城</a>
+    </div>
+  </div>
+  </div>
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/common/player-meta-bar.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/branch/branch-page.js"></script>
+</body>
+</html>

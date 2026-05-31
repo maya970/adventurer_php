@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>遗忘仪式</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <nav class="town-nav" aria-label="页面导航"></nav>
+  <div id="player-meta-bar" class="player-meta-bar"></div>
+  <div class="standalone-page">
+    <div class="panel">
+      <h1>遗忘仪式</h1>
+      <p class="panel-intro">消耗背包中的<strong>曦光晶屑</strong>，遗忘已学技能或已锁职业。等级越高，消耗越多。</p>
+      <p id="fg-crystal" class="panel-intro">曦光晶屑：—</p>
+    </div>
+    <div class="panel">
+      <h2>遗忘技能</h2>
+      <div id="fg-skills" class="bag-list"></div>
+    </div>
+    <div class="panel">
+      <h2>遗忘职业</h2>
+      <p id="fg-prof" class="panel-intro">—</p>
+      <button id="fg-forget-prof" class="town-dg-btn town-dg-btn-secondary" type="button" disabled>遗忘当前职业</button>
+    </div>
+  </div>
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/common/player-meta-bar.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/forget-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+{
+  "dungeon_drop": {
+    "kill_base_per_mille": 42,
+    "kill_floor_bonus_per_mille": 3,
+    "chest_base_per_mille": 65,
+    "chest_floor_bonus_per_mille": 4,
+    "max_per_mille": 180,
+    "branch_combat_base_per_mille": 85,
+    "branch_depth_bonus_per_mille": 6
+  },
+  "enhance": {
+    "base_gold": 50,
+    "gold_scale": 2,
+    "physical_difficulty": 2,
+    "arcane_difficulty": 3,
+    "utility_difficulty": 2,
+    "profession_bonus_denom": 3
+  },
+  "skills": [
+    {
+      "skill_key": "fireball",
+      "label": "火球术",
+      "desc": "造成火焰伤害，障碍判定有加成",
+      "action_key": "skill_fireball",
+      "book_item_key": "skill_book_fireball",
+      "drop_weight": 100,
+      "min_floor": 1,
+      "affinity": "arcane",
+      "vfx": {
+        "icon": "🔥",
+        "color": "#ff6b35",
+        "flash_class": "skill-vfx-fire",
+        "particle": "fire",
+        "shake": 0.18,
+        "log": "火球呼啸而出"
+      }
+    },
+    {
+      "skill_key": "ice_cone",
+      "label": "冰锥术",
+      "desc": "造成冰系伤害并有减速概率",
+      "action_key": "skill_ice_cone",
+      "book_item_key": "skill_book_ice_cone",
+      "drop_weight": 95,
+      "min_floor": 3,
+      "affinity": "arcane",
+      "vfx": {
+        "icon": "❄️",
+        "color": "#6ec6ff",
+        "flash_class": "skill-vfx-ice",
+        "particle": "ice",
+        "shake": 0.12,
+        "log": "冰锥破空而至"
+      }
+    },
+    {
+      "skill_key": "trap_disarm",
+      "label": "解除陷阱",
+      "desc": "提高陷阱与障碍检定通过率",
+      "action_key": "skill_trap_disarm",
+      "book_item_key": "skill_book_trap_disarm",
+      "drop_weight": 80,
+      "min_floor": 2,
+      "affinity": "utility",
+      "vfx": {
+        "icon": "🪤",
+        "color": "#c5e1a5",
+        "flash_class": "skill-vfx-trap",
+        "particle": "spark",
+        "shake": 0.08,
+        "log": "你谨慎地解除机关"
+      }
+    },
+    {
+      "skill_key": "dual_wield_mastery",
+      "label": "双持武器精通",
+      "desc": "强化双持动作效率",
+      "action_key": "skill_dual_wield_mastery",
+      "book_item_key": "skill_book_dual_wield",
+      "drop_weight": 70,
+      "min_floor": 5,
+      "affinity": "physical",
+      "vfx": {
+        "icon": "⚔️",
+        "color": "#ffd54f",
+        "flash_class": "skill-vfx-physical",
+        "particle": "slash",
+        "shake": 0.15,
+        "log": "双持连击"
+      }
+    },
+    {
+      "skill_key": "single_wield_mastery",
+      "label": "单持武器精通",
+      "desc": "强化单手高爆发动作",
+      "action_key": "skill_single_wield_mastery",
+      "book_item_key": "skill_book_single_wield",
+      "drop_weight": 70,
+      "min_floor": 5,
+      "affinity": "physical",
+      "vfx": {
+        "icon": "🗡️",
+        "color": "#ffe082",
+        "flash_class": "skill-vfx-physical",
+        "particle": "slash",
+        "shake": 0.2,
+        "log": "单手持握，全力一击"
+      }
+    },
+    {
+      "skill_key": "focus",
+      "label": "凝神",
+      "desc": "提高后续回合命中效率",
+      "action_key": "skill_focus",
+      "book_item_key": "skill_book_focus",
+      "drop_weight": 90,
+      "min_floor": 1,
+      "affinity": "utility",
+      "vfx": {
+        "icon": "🧘",
+        "color": "#b39ddb",
+        "flash_class": "skill-vfx-stance",
+        "particle": "aura",
+        "shake": 0,
+        "log": "你进入凝神状态"
+      }
+    },
+    {
+      "skill_key": "mind_eye",
+      "label": "心眼",
+      "desc": "提高后续回合暴击与穿透效率",
+      "action_key": "skill_mind_eye",
+      "book_item_key": "skill_book_mind_eye",
+      "drop_weight": 85,
+      "min_floor": 4,
+      "affinity": "utility",
+      "vfx": {
+        "icon": "👁️",
+        "color": "#ce93d8",
+        "flash_class": "skill-vfx-stance",
+        "particle": "aura",
+        "shake": 0,
+        "log": "心眼开启，破绽毕现"
+      }
+    },
+    {
+      "skill_key": "arcane_bolt",
+      "label": "奥术飞弹",
+      "desc": "智力驱动的魔法弹，伤害随智力提升",
+      "action_key": "skill_arcane_bolt",
+      "book_item_key": "skill_book_arcane_bolt",
+      "drop_weight": 110,
+      "min_floor": 6,
+      "affinity": "arcane",
+      "vfx": {
+        "icon": "✨",
+        "color": "#7c4dff",
+        "flash_class": "skill-vfx-arcane",
+        "particle": "arcane",
+        "shake": 0.14,
+        "log": "奥术飞弹划破黑暗"
+      }
+    },
+    {
+      "skill_key": "mana_shield",
+      "label": "法力护盾",
+      "desc": "本回合减伤并略增 AC",
+      "action_key": "skill_mana_shield",
+      "book_item_key": "skill_book_mana_shield",
+      "drop_weight": 75,
+      "min_floor": 8,
+      "affinity": "arcane",
+      "vfx": {
+        "icon": "🛡️",
+        "color": "#448aff",
+        "flash_class": "skill-vfx-shield",
+        "particle": "shield",
+        "shake": 0,
+        "log": "法力护盾环绕周身"
+      }
+    },
+    {
+      "skill_key": "intellect_surge",
+      "label": "智识涌动",
+      "desc": "下几回合法术伤害提升",
+      "action_key": "skill_intellect_surge",
+      "book_item_key": "skill_book_intellect_surge",
+      "drop_weight": 72,
+      "min_floor": 10,
+      "affinity": "arcane",
+      "vfx": {
+        "icon": "📘",
+        "color": "#536dfe",
+        "flash_class": "skill-vfx-arcane",
+        "particle": "surge",
+        "shake": 0.1,
+        "log": "智识涌动，法术增效"
+      }
+    },
+    {
+      "skill_key": "mystic_lens",
+      "label": "神秘透镜",
+      "desc": "提高智力检定与法术命中",
+      "action_key": "skill_mystic_lens",
+      "book_item_key": "skill_book_mystic_lens",
+      "drop_weight": 68,
+      "min_floor": 12,
+      "affinity": "arcane",
+      "vfx": {
+        "icon": "🔮",
+        "color": "#8e24aa",
+        "flash_class": "skill-vfx-arcane",
+        "particle": "lens",
+        "shake": 0.06,
+        "log": "神秘透镜洞察万物"
+      }
+    }
+  ]
+}

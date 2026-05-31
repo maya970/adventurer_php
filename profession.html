@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>技能</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <nav class="town-nav" aria-label="页面导航"></nav>
+  <div id="player-meta-bar" class="player-meta-bar"></div>
+  <div class="town-overlay open">
+    <div class="panel">
+      <h1>技能</h1>
+      <p id="pf-current" class="panel-intro">载入中…</p>
+      <p id="pf-prof-note" class="panel-intro"><a href="profession-change.html">尚未转职？前往转职页</a>（转职为不常用功能，与技能强化分开）</p>
+    </div>
+    <div class="panel">
+      <h2>已学技能</h2>
+      <p class="panel-intro">技能书学习后，可「强化一次」或「连续强化」。体修对物理技能、灵修对奥术技能有成功率加成。</p>
+      <div id="pf-skills" class="bag-list"></div>
+    </div>
+  </div>
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/common/player-meta-bar.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/profession-page.js"></script>
+</body>
+</html>

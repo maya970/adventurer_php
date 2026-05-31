@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>登录 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-auth">
+  <script>window.RPG_AUTH_REDIRECT = 'town.html';</script>
+  <div id="auth-overlay" class="auth-overlay open" aria-modal="true" role="dialog">
+    <div class="auth-card">
+      <h1>冒险者地牢</h1>
+      <p class="auth-hint">登录后进入<strong>冒险者主城</strong>；从主城再进入地下城、强化或拍卖行（各为独立页面）。</p>
+      <label class="auth-label">用户名 <input id="auth-user" type="text" autocomplete="username" maxlength="32" placeholder="3–32 位字母数字下划线"></label>
+      <label class="auth-label">密码 <input id="auth-pass" type="password" autocomplete="current-password" placeholder="至少 6 位"></label>
+      <p id="auth-msg" class="auth-error" style="display:none"></p>
+      <div class="auth-actions">
+        <button type="button" id="btn-auth-login" class="auth-btn primary">登录</button>
+        <button type="button" id="btn-auth-register" class="auth-btn">注册新角色</button>
+      </div>
+      <p class="auth-foot">同一账号对应一名冒险者。</p>
+
+    </div>
+  </div>
+
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-build-check.js"></script>
+  <script src="js/common/auth-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+{
+  "ginger_grunt": {
+    "label": "姜饼杂兵",
+    "desc": "用糖霜粘起来的低阶魔偶，动作笨拙但牙口极好，被咬到会疼上好一阵。",
+    "hp": 18,
+    "ac": 12,
+    "to_hit": 4,
+    "damage": "1d6+1",
+    "image_num": 6,
+    "sprite": "https://arweave.net/TGvoYCn0g9rKaNV_V2OSwsVwu4ZgxFnYNULVGeU7JdU"
+  },
+  "snow_spirit": {
+    "label": "雪灵",
+    "desc": "聚雪而成的精魂，身形飘忽，擅长用寒气刮伤冒险者的脸颊与意志。",
+    "hp": 14,
+    "ac": 13,
+    "to_hit": 5,
+    "damage": "1d4+2",
+    "image_num": 10,
+    "sprite": "https://arweave.net/BufnZYf3hyWFDo6QJeV3M1YC2UyBqxE75NBl2pBr68c"
+  },
+  "nutcracker": {
+    "label": "胡桃夹子卫兵",
+    "desc": "木质关节咔咔作响的玩具战士，外壳坚硬，挥砍起来像小型攻城槌。",
+    "hp": 28,
+    "ac": 15,
+    "to_hit": 6,
+    "damage": "1d8+2",
+    "image_num": 8,
+    "sprite": "https://arweave.net/AxhTRbFJ9WU7hDqSfd3gjHj9_mAGpakkXHxITYpjtAE"
+  },
+  "candy_slime": {
+    "label": "糖浆史莱姆",
+    "desc": "黏稠的糖块生物，移动缓慢，被击中会溅出滚烫糖浆。",
+    "hp": 22,
+    "ac": 11,
+    "to_hit": 3,
+    "damage": "1d6+2",
+    "image_num": 1,
+    "sprite": "https://arweave.net/TmcSXpfuDJPXmh9F3hMvqbgyfVHANpCex7GNnpsmv2M"
+  },
+  "coal_golem": {
+    "label": "煤块魔像",
+    "desc": "淘气名单上常见的造物，浑身漆黑滚烫，拳头带着煤灰与火星。",
+    "hp": 32,
+    "ac": 14,
+    "to_hit": 5,
+    "damage": "1d8+1",
+    "image_num": 3,
+    "sprite": "https://arweave.net/OD1cNP8ruEeADeWPzTGeshzPBSqVLH00QRZQGWHQli8"
+  },
+  "elf_archer": {
+    "label": "工坊精灵射手",
+    "desc": "背着迷你弩的精灵，箭矢涂有催眠糖浆，专打膝盖。",
+    "hp": 20,
+    "ac": 14,
+    "to_hit": 7,
+    "damage": "1d6+3",
+    "image_num": 4,
+    "sprite": "https://arweave.net/TGvoYCn0g9rKaNV_V2OSwsVwu4ZgxFnYNULVGeU7JdU"
+  },
+  "frost_imp": {
+    "label": "霜魔小鬼",
+    "desc": "尖笑不断的冰蓝色恶魔，喜欢往人脖子里塞雪团。",
+    "hp": 16,
+    "ac": 15,
+    "to_hit": 6,
+    "damage": "1d4+3",
+    "image_num": 5,
+    "sprite": "https://arweave.net/BufnZYf3hyWFDo6QJeV3M1YC2UyBqxE75NBl2pBr68c"
+  },
+  "carol_wraith": {
+    "label": "颂歌怨灵",
+    "desc": "五音不全却永不停歇的亡灵合唱，声波能震裂盾牌上的漆。",
+    "hp": 24,
+    "ac": 13,
+    "to_hit": 8,
+    "damage": "1d8+2",
+    "image_num": 2,
+    "sprite": "https://arweave.net/AxhTRbFJ9WU7hDqSfd3gjHj9_mAGpakkXHxITYpjtAE"
+  },
+  "stocking_mimic": {
+    "label": "伪装长袜怪",
+    "desc": "看起来是装满礼物的大袜子，靠近便会露出獠牙与深不见底的袜筒。",
+    "hp": 26,
+    "ac": 12,
+    "to_hit": 5,
+    "damage": "1d10+1",
+    "image_num": 11,
+    "sprite": "https://arweave.net/TmcSXpfuDJPXmh9F3hMvqbgyfVHANpCex7GNnpsmv2M"
+  },
+  "yule_treant": {
+    "label": "圣诞木树人",
+    "desc": "由整段圣诞木活化而成，枝条上挂满会爆炸的装饰品。",
+    "hp": 40,
+    "ac": 16,
+    "to_hit": 7,
+    "damage": "2d6+2",
+    "image_num": 13,
+    "sprite": "https://arweave.net/OD1cNP8ruEeADeWPzTGeshzPBSqVLH00QRZQGWHQli8"
+  },
+  "reindeer_fury": {
+    "label": "狂怒驯鹿",
+    "desc": "鹿角镀银、鼻光如炬，冲刺时地城都在震动。",
+    "hp": 34,
+    "ac": 14,
+    "to_hit": 8,
+    "damage": "1d10+3",
+    "image_num": 9,
+    "sprite": "https://arweave.net/ol8b1uQnffHbCWTEfwp6A3cTKzZVH3fgQ3sj9xicQw4"
+  },
+  "krampus_shadow": {
+    "label": "坎卜斯之影",
+    "desc": "传说中惩罚淘气者的化身在地城中的投影，鞭影与恐惧一同降临。",
+    "hp": 48,
+    "ac": 17,
+    "to_hit": 10,
+    "damage": "2d8+3",
+    "image_num": 7,
+    "sprite": "https://arweave.net/AxhTRbFJ9WU7hDqSfd3gjHj9_mAGpakkXHxITYpjtAE"
+  },
+  "world_boss": {
+    "label": "世界首领",
+    "desc": "全服冒险者共斗的强敌，生命与地城进度绑定在服务器上。",
+    "hp": 18,
+    "ac": 12,
+    "to_hit": 4,
+    "damage": "1d6+1",
+    "image_num": 12,
+    "sprite": "https://arweave.net/AxhTRbFJ9WU7hDqSfd3gjHj9_mAGpakkXHxITYpjtAE"
+  }
+}

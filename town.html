@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Main Town</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&amp;family=Ma+Shan+Zheng&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <div id="town-overlay" class="open">
+    <nav class="town-nav" data-tlabel-aria="nav_aria"></nav>
+    <div class="town-header">
+      <h1 data-tlabel="h1"></h1>
+      <p id="town-name" class="town-subtitle">
+        <span id="town-name-text"></span><a href="account-email.html" class="town-subtle-email-link" data-tlabel="email_link" data-tlabel-title="email_title"></a>
+      </p>
+      <div class="town-header-actions">
+        <a href="https://mxzgh.com/forum_thread.php?id=15" target="_blank" rel="noopener noreferrer" class="town-dg-btn town-dg-btn-muted" data-tlabel="forum"></a>
+        <button type="button" id="btn-logout" class="town-logout" data-tlabel="logout"></button>
+      </div>
+    </div>
+    <div class="town-grid town-top">
+      <div class="panel panel-attr">
+        <h2 data-tlabel="panel_attr_h2"></h2>
+        <p class="panel-intro" data-tlabel="panel_attr_intro"></p>
+        <div id="town-stats" class="town-stats-body"></div>
+      </div>
+      <div class="panel panel-detail">
+        <h2 data-tlabel="panel_detail_h2"></h2>
+        <p class="panel-intro" data-tlabel="panel_detail_intro"></p>
+        <div id="item-detail-pane" class="item-detail-pane"></div>
+      </div>
+    </div>
+    <div class="town-grid town-titles-band">
+      <div class="panel panel-titles">
+        <h2 data-tlabel="panel_titles_h2"></h2>
+        <p class="panel-intro" data-tlabel="panel_titles_intro"></p>
+        <div id="town-titles" class="town-titles-list"></div>
+      </div>
+    </div>
+    <div class="town-grid town-mid">
+      <div class="panel">
+        <h2 data-tlabel="panel_equip_h2"></h2>
+        <p class="panel-intro" data-tlabel="panel_equip_intro"></p>
+        <div id="equip-slots" class="equip-slots"></div>
+      </div>
+      <div class="panel">
+        <h2 data-tlabel="panel_bag_h2"></h2>
+        <p class="panel-intro" data-tlabel="panel_bag_intro"></p>
+        <div class="bag-toolbar">
+          <button type="button" id="btn-sell-all" class="bag-sell-all-btn" data-tlabel="btn_sell_all"></button>
+          <button type="button" id="btn-sell-all-except-equiv" class="bag-sell-except-equiv-btn" data-tlabel="btn_sell_except"></button>
+        </div>
+        <div id="bag-list" class="bag-list"></div>
+      </div>
+      <div class="panel">
+        <h2 data-tlabel="panel_wh_h2"></h2>
+        <p class="panel-intro" data-tlabel="panel_wh_intro"></p>
+        <div id="warehouse-list" class="bag-list warehouse-list"></div>
+      </div>
+    </div>
+    <div id="town-actions" class="town-dungeon-panel">
+      <div class="town-dg-row town-dg-row-tools">
+        <button type="button" id="btn-dungeon-refresh" class="town-dg-btn town-dg-btn-muted" data-tlabel="btn_refresh"></button>
+        <span id="town-dungeon-countdown" class="town-dg-countdown" aria-live="polite"></span>
+      </div>
+      <div class="town-dg-row town-dg-row-main">
+        <button type="button" id="btn-dungeon-enter" class="town-dg-btn town-dg-btn-primary" data-tlabel="btn_enter"></button>
+        <button type="button" id="btn-match-pk" class="town-dg-btn town-dg-btn-secondary" data-tlabel="btn_pk"></button>
+        <a href="surface-branch.html" id="btn-surface-link" class="town-dg-btn town-dg-btn-surface" data-tlabel="btn_branch"></a>
+        <a href="deck.html" class="town-dg-btn town-dg-btn-muted" data-tlabel="btn_deck"></a>
+        <button type="button" id="btn-dungeon-record" class="town-dg-btn town-dg-btn-secondary" hidden data-tlabel="btn_campfire"></button>
+      </div>
+      <p class="town-dg-hint" id="town-dungeon-hint"></p>
+      <label class="town-safe-loop-label"><input type="checkbox" id="chk-safe-loop" checked /><span data-tlabel="safe_loop"></span></label>
+    </div>
+  </div>
+  <div id="sell-one-modal" class="rpg-modal" hidden>
+    <div class="rpg-modal-card" role="dialog" aria-modal="true" aria-labelledby="sell-one-title">
+      <h3 id="sell-one-title" class="rpg-modal-title" data-tlabel="sell_one_title"></h3>
+      <p id="sell-one-summary" class="rpg-modal-text"></p>
+      <div class="rpg-modal-actions">
+        <button type="button" id="sell-one-cancel" class="rpg-modal-btn" data-tlabel="sell_one_cancel"></button>
+        <button type="button" id="sell-one-confirm" class="rpg-modal-btn danger" data-tlabel="sell_one_confirm"></button>
+      </div>
+    </div>
+  </div>
+  <div id="sell-all-modal" class="rpg-modal" hidden>
+    <div class="rpg-modal-card" role="dialog" aria-modal="true" aria-labelledby="sell-all-title">
+      <h3 id="sell-all-title" class="rpg-modal-title" data-tlabel="sell_all_title"></h3>
+      <p class="rpg-modal-text" data-tlabel="sell_all_body" data-thtml="1"></p>
+      <p id="sell-all-summary" class="rpg-modal-text sell-all-summary"></p>
+      <div class="rpg-modal-actions">
+        <button type="button" id="sell-all-cancel" class="rpg-modal-btn" data-tlabel="sell_all_cancel"></button>
+        <button type="button" id="sell-all-confirm" class="rpg-modal-btn danger" data-tlabel="sell_all_confirm"></button>
+      </div>
+    </div>
+  </div>
+  <div id="sell-all-except-equiv-modal" class="rpg-modal" hidden>
+    <div class="rpg-modal-card" role="dialog" aria-modal="true" aria-labelledby="sell-all-equiv-title">
+      <h3 id="sell-all-equiv-title" class="rpg-modal-title" data-tlabel="sell_equiv_title"></h3>
+      <p class="rpg-modal-text" data-tlabel="sell_equiv_body" data-thtml="1"></p>
+      <p id="sell-all-except-equiv-summary" class="rpg-modal-text sell-all-summary"></p>
+      <div class="rpg-modal-actions">
+        <button type="button" id="sell-all-except-equiv-cancel" class="rpg-modal-btn" data-tlabel="sell_equiv_cancel"></button>
+        <button type="button" id="sell-all-except-equiv-confirm" class="rpg-modal-btn danger" data-tlabel="sell_equiv_confirm"></button>
+      </div>
+    </div>
+  </div>
+  <script src="js/town/town-labels.js"></script>
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/common/rpg-build-check.js"></script>
+  <script src="js/town/town-ui.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/town-page.js"></script>
+</body>
+</html>

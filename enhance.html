@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>强化工坊 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <div class="standalone-page">
+    <nav class="town-nav" aria-label="页面导航"></nav>
+    <header class="standalone-header">
+      <h1>强化工坊</h1>
+      <p class="standalone-sub">在此可查看属性、整理装备并强化。成功率与消耗以服务器为准；失败仍会扣金币。当前金币：<strong id="enh-gold">—</strong></p>
+      <button type="button" id="btn-enh-refresh" class="auth-btn primary" style="max-width:220px;margin-top:8px">刷新全部数据</button>
+    </header>
+
+    <div class="enhance-panels-grid">
+      <div class="panel">
+        <h2>角色属性</h2>
+        <p class="panel-intro">与主城同步的数值概要。</p>
+        <div id="town-stats" class="town-stats-body"></div>
+      </div>
+      <div class="panel">
+        <h2>装备栏</h2>
+        <p class="panel-intro">主手（右）与副手（左）为独立槽位；副手不参与主手伤害骰。</p>
+        <div id="equip-slots" class="equip-slots"></div>
+      </div>
+      <div class="panel">
+        <h2>背包</h2>
+        <p class="panel-intro">未装备物品可装备；可入仓。仓库物品需取出后再强化。</p>
+        <div id="bag-list" class="bag-list"></div>
+      </div>
+      <div class="panel">
+        <h2>仓库</h2>
+        <p class="panel-intro">不参与全部出售；取出后方可强化。</p>
+        <div id="warehouse-list" class="bag-list warehouse-list"></div>
+      </div>
+      <div class="panel">
+        <h2>物品详情</h2>
+        <div id="item-detail-pane" class="item-detail-pane"></div>
+      </div>
+    </div>
+
+    <div id="enh-main-wrap">
+      <h2 class="enhance-list-heading">可强化装备</h2>
+      <p class="panel-intro">点击一行进入<strong>独立强化页</strong>（含连续强化、成功/失败特效）。</p>
+      <div id="enhance-list" class="enhance-list"></div>
+    </div>
+
+    <div id="enh-detail-wrap" class="enh-detail-wrap" hidden>
+      <div class="enh-detail-toolbar">
+        <button type="button" id="enh-detail-back" class="auth-btn">返回列表</button>
+      </div>
+      <div id="enh-detail-root" class="enh-detail-root"></div>
+    </div>
+  </div>
+
+  <div id="sell-one-modal" class="rpg-modal" hidden>
+    <div class="rpg-modal-card" role="dialog" aria-modal="true" aria-labelledby="sell-one-title-enh">
+      <h3 id="sell-one-title-enh" class="rpg-modal-title">确认出售？</h3>
+      <p id="sell-one-summary" class="rpg-modal-text"></p>
+      <div class="rpg-modal-actions">
+        <button type="button" id="sell-one-cancel" class="rpg-modal-btn">取消</button>
+        <button type="button" id="sell-one-confirm" class="rpg-modal-btn danger">确定出售</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/town/town-ui.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/enhance-page.js"></script>
+</body>
+</html>

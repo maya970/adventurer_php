@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>公会 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <div class="standalone-page">
+    <nav class="town-nav" aria-label="页面导航"></nav>
+    <header class="standalone-header">
+      <h1>公会大厅</h1>
+      <p class="standalone-sub">创建公会、按名称加入、或离开当前公会。公会名全服唯一。</p>
+    </header>
+    <div class="panel" style="max-width:520px;margin:0 auto">
+      <h2>当前状态</h2>
+      <div id="town-stats" class="town-stats-body"></div>
+      <h3 class="subh">创建公会</h3>
+      <input type="text" id="guild-create-name" maxlength="32" placeholder="公会名称（2～32 字）" class="auc-filter-q" style="width:100%;max-width:320px">
+      <button type="button" id="btn-guild-create" class="town-dg-btn town-dg-btn-primary">创建</button>
+      <h3 class="subh">加入公会</h3>
+      <input type="text" id="guild-join-name" maxlength="32" placeholder="输入要加入的公会名称" class="auc-filter-q" style="width:100%;max-width:320px">
+      <button type="button" id="btn-guild-join" class="town-dg-btn town-dg-btn-secondary">加入</button>
+      <h3 class="subh">离开公会</h3>
+      <button type="button" id="btn-guild-leave" class="town-dg-btn town-dg-btn-muted">离开当前公会</button>
+    </div>
+  </div>
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/town/town-ui.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/guild-page.js"></script>
+</body>
+</html>

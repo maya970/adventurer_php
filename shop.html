@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>杂货店 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <div class="standalone-page">
+    <nav class="town-nav" aria-label="页面导航"></nav>
+    <header class="standalone-header">
+      <h1>杂货店</h1>
+      <p class="standalone-sub">分支地牢所需道具均可在此购买：斧子、治疗药水等。篝火长剑用于地下城记录复苏位置。</p>
+    </header>
+
+    <div class="panel shop-panel">
+      <div id="town-stats" class="town-stats-body"></div>
+      <div id="shop-items-list" class="char-license-list"></div>
+    </div>
+  </div>
+
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/town/town-ui.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/shop-page.js"></script>
+</body>
+</html>

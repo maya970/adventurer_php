@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>账号邮箱 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <div class="standalone-page">
+    <nav class="town-nav" aria-label="页面导航"></nav>
+    <header class="standalone-header">
+      <h1>账号邮箱</h1>
+      <p class="standalone-sub">
+        绑定并验证后可用于拍卖成交通知等。许多免费主机无法发出邮件；若收不到，绑定仍会保存，可在主机支持发信后使用下方「重新发送」，或向服主求助。
+      </p>
+    </header>
+    <div class="jump-panels-grid">
+      <div class="panel" style="grid-column: 1 / -1">
+        <h2>状态</h2>
+        <p class="panel-intro" id="ae-intro"></p>
+        <p class="panel-intro" id="ae-detail" hidden></p>
+        <div id="ae-form">
+          <label class="auth-label"
+            >邮箱地址
+            <input type="email" id="ae-input" maxlength="255" autocomplete="email" placeholder="用于验证与拍卖成交通知" />
+          </label>
+          <div class="town-dg-row town-dg-row-tools" style="margin-top: 10px">
+            <button type="button" id="ae-submit" class="town-dg-btn town-dg-btn-primary">发送验证邮件</button>
+            <button type="button" id="ae-resend" class="town-dg-btn town-dg-btn-muted" hidden>重新发送验证邮件</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/town/town-ui.js"></script>
+  <script src="js/town/account-email-page.js"></script>
+</body>
+</html>

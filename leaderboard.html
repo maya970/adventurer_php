@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>排行榜 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <div class="standalone-page">
+    <nav class="town-nav" aria-label="页面导航"></nav>
+    <header class="standalone-header">
+      <h1>排行榜</h1>
+      <p class="standalone-sub">经验、金币、世界首领首杀、武器/护甲/戒指/鞋子榜各展示前 10；角色榜为装备后的有效属性。</p>
+    </header>
+    <div class="panel lb-panel lb-panel-multi">
+      <button type="button" id="btn-lb-refresh" class="auth-btn primary lb-refresh-top">刷新全部榜单</button>
+      <div id="lb-boards" class="lb-boards"></div>
+    </div>
+  </div>
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/town/town-ui.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/leaderboard-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>战斗牌组 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL='login.html';</script>
+  <div id="toast"></div>
+  <nav class="town-nav" aria-label="页面导航"></nav>
+  <div class="panel" style="max-width:960px;margin:16px auto">
+    <h1>战斗牌组</h1>
+    <p class="panel-intro">预设 12 张技能 + 6 张药水（共 18 张）。每次战斗重置：技能用完洗牌，药水永久消耗需重新购买。</p>
+    <p id="deck-status" class="panel-intro">加载中…</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div>
+        <h2>已学技能（选 12 张）</h2>
+        <div id="deck-skills-pool" class="bag-list"></div>
+        <h3>已选技能 <span id="deck-skill-count">0/12</span></h3>
+        <div id="deck-skills-picked" class="bag-list"></div>
+      </div>
+      <div>
+        <h2>背包药水（选 6 张）</h2>
+        <div id="deck-potions-pool" class="bag-list"></div>
+        <h3>已选药水 <span id="deck-potion-count">0/6</span></h3>
+        <div id="deck-potions-picked" class="bag-list"></div>
+      </div>
+    </div>
+    <p style="margin-top:16px">
+      <button type="button" id="btn-deck-save" class="town-dg-btn town-dg-btn-primary">保存牌组</button>
+      <a href="town.html" class="town-dg-btn town-dg-btn-secondary">回主城</a>
+    </p>
+  </div>
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/deck-page.js"></script>
+</body>
+</html>

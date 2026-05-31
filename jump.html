@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>跳跃法阵 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <div class="standalone-page">
+    <nav class="town-nav" aria-label="页面导航"></nav>
+    <header class="standalone-header">
+      <h1>跳跃法阵</h1>
+      <p class="standalone-sub">将<strong>允许表</strong>中的杂物作为等价物献祭后，会<strong>立即进入地下城</strong>并落在所选起始层（10 的倍数，含各世界首领层）。消耗规则：目标层 ÷ 10 = 所需等价物个数（例如 10 层需 1，20 层需 2）。若已设<strong>避难所锚点</strong>（须在地下城内用权杖设立），选择该层可免费传送。<strong>避难所锚点不可在本页设立。</strong></p>
+    </header>
+
+    <div class="jump-panels-grid">
+      <div class="panel">
+        <h2>角色</h2>
+        <div id="town-stats" class="town-stats-body"></div>
+      </div>
+      <div class="panel">
+        <h2>目标层数</h2>
+        <p class="panel-intro" id="jump-max-hint"></p>
+        <label class="jump-label" for="jump-target-floor">选择起始层（献祭后将直接进入地下城该层）</label>
+        <select id="jump-target-floor"></select>
+        <p class="panel-intro" id="jump-cost-hint"></p>
+      </div>
+      <div class="panel">
+        <h2>等价物（背包中的允许杂物）</h2>
+        <p class="panel-intro">仅显示在跳跃允许表内、未装备且不在仓库的杂物。勾选后点击献祭跳跃。</p>
+        <div id="jump-equiv-list" class="jump-equiv-list"></div>
+        <p class="panel-intro" id="jump-sum-hint">已选等价合计：<strong>0</strong></p>
+        <button type="button" id="jump-submit-btn" class="auth-btn primary" disabled>献祭并设定跳跃</button>
+      </div>
+      <div class="panel">
+        <h2>允许表目录</h2>
+        <p class="panel-intro">服务器配置的等价物模板（非背包实例）。</p>
+        <div id="jump-catalog-list" class="jump-catalog-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/town/town-ui.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/jump-page.js"></script>
+</body>
+</html>

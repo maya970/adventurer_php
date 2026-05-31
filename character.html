@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>皮肤地产 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <div class="standalone-page">
+    <nav class="town-nav" aria-label="页面导航"></nav>
+    <header class="standalone-header">
+      <h1>皮肤地产</h1>
+      <p class="standalone-sub">掷骰前进；须<strong>走到</strong>空格才能建收费站（全服可见）。经过他人收费站须缴费，站在他人站上可 2 倍过路费收购。</p>
+    </header>
+
+    <div class="panel shop-panel">
+      <h2>当前皮肤</h2>
+      <p id="char-current-sheet" class="panel-intro">—</p>
+    </div>
+
+    <div class="panel shop-panel">
+      <h2>皮肤大富翁</h2>
+      <p id="skin-board-meta" class="panel-intro">—</p>
+      <div id="skin-board-grid" class="skin-mono-board" aria-label="大富翁棋盘"></div>
+      <div class="bag-toolbar skin-board-actions">
+        <button type="button" id="skin-board-roll" class="town-dg-btn town-dg-btn-primary">消耗1晶屑掷骰</button>
+        <button type="button" id="skin-board-build" class="town-dg-btn" hidden>建造收费站（50金）</button>
+        <button type="button" id="skin-board-buyout" class="town-dg-btn" hidden>收购收费站</button>
+      </div>
+      <p id="skin-board-toll-hint" class="panel-intro"></p>
+    </div>
+
+    <div class="panel shop-panel">
+      <h2>已拥有皮肤</h2>
+      <p class="panel-intro">每位冒险者默认拥有「默认形象」。解锁后在此切换装备。</p>
+      <div id="skin-unlocked-list" class="char-license-list"></div>
+    </div>
+  </div>
+
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/common/man-sprite.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/character-page.js"></script>
+</body>
+</html>

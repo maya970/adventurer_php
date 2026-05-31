@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>匹配 PK</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="rpg-view-dungeon rpg-view-with-nav">
+  <script>window.RPG_LOGIN_URL='login.html';</script>
+  <div id="toast"></div>
+  <nav class="town-nav" aria-label="页面导航"></nav>
+  <div id="player-meta-bar" class="player-meta-bar"></div>
+  <div id="pk-root" style="display:grid;grid-template-columns:1fr 320px;min-height:calc(100vh - 40px)">
+    <div id="pk-scene-wrap" style="position:relative;background:#0a0e14;min-height:360px">
+      <canvas id="pk-canvas"></canvas>
+      <div id="pk-scene-hud" style="position:absolute;top:12px;left:12px;color:#e6edf3;font-size:14px"></div>
+    </div>
+    <div id="pk-panel" style="padding:14px;background:#161b22;border-left:1px solid #30363d;color:#e6edf3">
+      <h2>匹配 PK</h2>
+      <div id="pk-match-info">匹配中…</div>
+      <div id="pk-hp-bar"></div>
+      <h3>手牌</h3>
+      <div id="pk-hand"></div>
+      <h3>本回合（最多5）</h3>
+      <div id="pk-queue"></div>
+      <button type="button" id="pk-btn-base-main" class="town-dg-btn">主手</button>
+      <button type="button" id="pk-btn-base-off" class="town-dg-btn">副手</button>
+      <button type="button" id="pk-btn-base-def" class="town-dg-btn">防御</button>
+      <button type="button" id="pk-btn-turn" class="town-dg-btn town-dg-btn-primary">执行回合</button>
+      <div id="pk-log"></div>
+    </div>
+  </div>
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/common/man-sprite.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/common/player-meta-bar.js"></script>
+  <script src="js/common/battle-deck.js"></script>
+  <script src="js/pk/match-pk-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日任务 · 曦光晶屑</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-town standalone-rpg-body">
+  <script>window.RPG_LOGIN_URL = 'login.html';</script>
+  <div id="toast"></div>
+  <nav class="town-nav" aria-label="页面导航"></nav>
+  <div id="player-meta-bar" class="player-meta-bar"></div>
+  <div class="standalone-page">
+    <header class="standalone-header">
+      <h1>每日任务</h1>
+      <p class="standalone-sub">曦光晶屑<strong>不再从地下城掉落</strong>，请通过下列每日任务领取（每项每日限领 1 次）。</p>
+      <p id="tasks-crystal-hint" class="panel-intro">背包曦光晶屑：—</p>
+    </header>
+    <div id="tasks-progress" class="panel panel-intro"></div>
+    <div id="tasks-list" class="tasks-list"></div>
+  </div>
+  <script src="js/common/api-client.js"></script>
+  <script src="js/common/rpg-page.js"></script>
+  <script src="js/common/player-meta-bar.js"></script>
+  <script src="js/town/town-nav.js"></script>
+  <script src="js/town/tasks-page.js"></script>
+</body>
+</html>

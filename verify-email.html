@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>邮箱验证 · 冒险者地牢</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="rpg-view-auth">
+  <div class="auth-overlay open" aria-modal="true" role="dialog">
+    <div class="auth-card">
+      <h1>邮箱验证</h1>
+      <p id="verify-status" class="auth-hint">正在验证…</p>
+      <p class="auth-foot"><a href="login.html">返回登录</a></p>
+    </div>
+  </div>
+  <script src="js/common/api-client.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const el = document.getElementById('verify-status');
+      const token = new URLSearchParams(window.location.search).get('token') || '';
+      if (!token) {
+        el.textContent = '链接无效：缺少验证参数。';
+        return;
+      }
+      try {
+        const d = await gameApi('verify_email', { token: token.trim() });
+        el.textContent = (d && d.message) || '验证成功，请返回登录页登录。';
+      } catch (e) {
+        el.textContent = e.message || String(e);
+      }
+    });
+  </script>
+</body>
+</html>

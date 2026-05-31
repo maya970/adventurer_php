@@ -1,0 +1,30 @@
+{
+  "_readme": "default=无匹配时；ranges=按 from_floor~to_floor；floors=精确单层覆盖。客户端 localStorage rpg_bgm_muted=1 静音。",
+  "default": [
+    "https://arweave.net/3QaXlF77IDjwKKIsROMldfaE9XWh5cIkM_E6556BreE"
+  ],
+  "floors": [
+    {
+      "floor": 10,
+      "src": [
+        "https://arweave.net/3QaXlF77IDjwKKIsROMldfaE9XWh5cIkM_E6556BreE"
+      ]
+    }
+  ],
+  "ranges": [
+    {
+      "from_floor": 1,
+      "to_floor": 10,
+      "src": [
+        "https://arweave.net/3QaXlF77IDjwKKIsROMldfaE9XWh5cIkM_E6556BreE"
+      ]
+    },
+    {
+      "from_floor": 11,
+      "to_floor": 20,
+      "src": [
+        "https://arweave.net/3QaXlF77IDjwKKIsROMldfaE9XWh5cIkM_E6556BreE"
+      ]
+    }
+  ]
+}
